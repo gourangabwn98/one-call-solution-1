@@ -1,60 +1,50 @@
 import { motion } from "framer-motion";
-import HeroSection from "../components/HeroSection";
 import ContactForm from "../components/ContactForm";
-import Footer from "../components/Footer";
-import { siteData } from "../data";
 
-const Contact = () => (
-  <div>
-    <HeroSection {...siteData.contact} />
-    <section className="py-16 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div>
-            <motion.h2
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              className="text-3xl font-bold mb-4"
-            >
-              Contact Form
-            </motion.h2>
-            <ContactForm formFields={siteData.contact.formFields} />
-          </div>
-          <div>
-            <motion.h2
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              className="text-3xl font-bold mb-4"
-            >
-              Contact Info
-            </motion.h2>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              className="space-y-4"
-            >
-              <p className="text-gray-600">
-                Phone: {siteData.contact.info.phone}
-              </p>
-              <p className="text-gray-600">
-                WhatsApp: {siteData.contact.info.whatsapp}
-              </p>
-              <p className="text-gray-600">
-                Email: {siteData.contact.info.email}
-              </p>
-              <p className="text-gray-600">
-                Address: {siteData.contact.info.address}
-              </p>
-              <div className="h-64 bg-gray-200 rounded-lg flex items-center justify-center">
-                <p>Google Map of Burdwan (Placeholder)</p>
-              </div>
-            </motion.div>
-          </div>
-        </div>
+const Contact = () => {
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+  };
+
+  return (
+    <motion.section
+      variants={sectionVariants}
+      initial="hidden"
+      animate="visible"
+      className="min-h-screen bg-[linear-gradient(45deg,#1e1b4b,#be185d)] text-white py-16 pt-24"
+    >
+      <div className="container mx-auto px-6 sm:px-8 md:px-12">
+        <motion.h1
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.3, duration: 0.7 }}
+          className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-amber-300 to-pink-500"
+        >
+          Contact Us
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+          className="text-lg sm:text-xl md:text-2xl text-center mb-12 max-w-3xl mx-auto"
+        >
+          Reach out to us for any queries or to book our services!
+        </motion.p>
+        <ContactForm />
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7, duration: 0.6 }}
+          className="mt-8 text-center text-sm sm:text-base"
+        >
+          <p>Phone: +91-123-456-7890</p>
+          <p>Email: support@onecallsolution.com</p>
+          <p>Address: 123 Burdwan Road, Burdwan, West Bengal</p>
+        </motion.div>
       </div>
-    </section>
-    <Footer />
-  </div>
-);
+    </motion.section>
+  );
+};
 
 export default Contact;

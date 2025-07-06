@@ -1,274 +1,122 @@
 export const siteData = {
   navLinks: [
     { name: "Home", path: "/" },
+    { name: "All Orders", path: "/dashboard" },
     { name: "About", path: "/about" },
     { name: "Services", path: "/services" },
-    { name: "Book Service", path: "/book-service" },
     { name: "Testimonials", path: "/testimonials" },
-    { name: "Blog", path: "/blog" },
+    { name: "Blog", path: "/blog/tips-for-seniors" },
     { name: "FAQ", path: "/faq" },
     { name: "Contact", path: "/contact" },
   ],
-  hero: {
-    headline: "One Call Solution: Burdwan’s Ultimate Service Hub",
-    subheadline:
-      "From medicine and food delivery to travel and home services – get it all with one click or call in Burdwan!",
-    ctaPrimary: "Order Now",
-    ctaSecondary: "Call Us",
-    ctaPrimaryLink: "/book-service",
-    ctaSecondaryLink: "tel:+911234567890",
-  },
   services: [
     {
       title: "Medicine Delivery",
-      desc: "Fast delivery of prescriptions and OTC medicines from trusted Burdwan pharmacies. Upload prescriptions and track orders in real-time.",
+      description:
+        "Get your medicines delivered to your doorstep quickly and safely.",
       icon: "💊",
-      cta: "Order Medicine",
       link: "/services/medicine-delivery",
+      details:
+        "Partnered with top pharmacies in Burdwan, we ensure timely delivery of prescription and over-the-counter medicines.",
     },
     {
       title: "Food Delivery",
-      desc: "Enjoy Burdwan’s famous sweets and savory dishes from top restaurants, delivered fresh to your door.",
-      icon: "🍽️",
-      cta: "Order Food",
+      description:
+        "Order delicious meals from your favorite restaurants in Burdwan.",
+      icon: "🍔",
       link: "/services/food-delivery",
+      details:
+        "Choose from a wide range of local restaurants, from traditional Bengali cuisine to fast food favorites.",
     },
     {
       title: "Grocery Delivery",
-      desc: "Fresh groceries and essentials delivered quickly from local Burdwan vendors.",
-      icon: "🛍️",
-      cta: "Shop Now",
+      description:
+        "Shop for groceries online and have them delivered in no time.",
+      icon: "🛒",
       link: "/services/grocery",
+      details:
+        "Fresh produce, pantry staples, and household essentials delivered from trusted local stores.",
     },
     {
       title: "Ride Booking",
-      desc: "Book reliable rides across Burdwan for quick and safe travel.",
+      description:
+        "Book a ride for quick and comfortable travel around Burdwan.",
       icon: "🚗",
-      cta: "Book Ride",
       link: "/services/ride-booking",
+      details:
+        "Safe and reliable rides with professional drivers, available for short trips or long journeys.",
     },
     {
       title: "Decoration Services",
-      desc: "Transform your events with professional decoration services tailored to your needs.",
+      description:
+        "Plan your events with our professional decoration services.",
       icon: "🎉",
-      cta: "Book Decoration",
       link: "/services/decoration-services",
+      details:
+        "Customized decorations for weddings, birthdays, and corporate events, tailored to your vision.",
     },
     {
       title: "House Rent",
-      desc: "Find and rent homes in Burdwan with our hassle-free service.",
+      description: "Find the perfect rental home with our hassle-free service.",
       icon: "🏠",
-      cta: "Find Home",
       link: "/services/house-rent",
+      details:
+        "Explore a variety of rental properties in Burdwan, from apartments to independent houses.",
     },
     {
       title: "Travel & Tour",
-      desc: "Plan memorable trips in and around Burdwan with our travel services.",
+      description: "Explore Burdwan and beyond with our guided tours.",
       icon: "✈️",
-      cta: "Plan Trip",
       link: "/services/travel-tour",
+      details:
+        "Curated tours to local attractions and nearby destinations, with expert guides and comfortable transport.",
     },
     {
       title: "Doctor Appointment",
-      desc: "Schedule appointments with top doctors in Burdwan effortlessly.",
+      description: "Book appointments with trusted doctors in Burdwan.",
       icon: "🩺",
-      cta: "Book Appointment",
       link: "/services/doctor-appointment",
-    },
-  ],
-  whyChooseUs: [
-    {
-      title: "Local Expertise",
-      desc: "Deeply rooted in Burdwan, we understand your needs like no one else.",
-    },
-    {
-      title: "Lightning Speed",
-      desc: "Deliveries and services often completed within 30 minutes.",
-    },
-    {
-      title: "24/7 Support",
-      desc: "Round-the-clock assistance for any query or need.",
-    },
-    {
-      title: "Trusted by Thousands",
-      desc: "Burdwan residents rely on us for consistent, high-quality service.",
+      details:
+        "Connect with experienced doctors across specialties, with easy scheduling and follow-up support.",
     },
   ],
   testimonials: [
     {
-      quote: "Medicine delivered in 25 minutes! A true lifesaver!",
-      author: "Arjun Sen, Burdwan",
+      name: "Anita Roy",
+      quote:
+        "One Call Solution delivered my medicines right on time. Amazing service!",
+      role: "Customer",
     },
     {
-      quote: "Ordered food from my favorite restaurant – so quick and easy!",
-      author: "Priya Das, Burdwan",
+      name: "Rahul Das",
+      quote:
+        "The food delivery was quick and the quality was top-notch. Highly recommend!",
+      role: "Customer",
     },
     {
-      quote: "Booked a ride in minutes, very reliable!",
-      author: "Sanjay Roy, Burdwan",
-    },
-    {
-      quote: "Their decoration service made my event unforgettable!",
-      author: "Rina Paul, Burdwan",
+      name: "Priya Sharma",
+      quote:
+        "Booking a ride was so easy, and the driver was very professional.",
+      role: "Customer",
     },
   ],
-  howItWorks: [
+};
+export const siteDataa = {
+  services: [
+    { title: "Food Delivery", link: "/services/food-delivery", icon: "🍔" },
+    { title: "Grocery", link: "/services/grocery", icon: "🛒" },
+    { title: "Ride Booking", link: "/services/ride-booking", icon: "🚗" },
     {
-      step: "Call or Click",
-      desc: "Start your order via our website or hotline.",
-      icon: "📞",
+      title: "Decoration Services",
+      link: "/services/decoration-services",
+      icon: "🎉",
     },
+    { title: "House Rent", link: "/services/house-rent", icon: "🏡" },
+    { title: "Travel Tour", link: "/services/travel-tour", icon: "✈️" },
     {
-      step: "Choose Service",
-      desc: "Select from medicine, food, rides, or more.",
-      icon: "✅",
-    },
-    {
-      step: "Fast Delivery",
-      desc: "Track your order and get it quickly.",
-      icon: "🚚",
+      title: "Doctor Appointment",
+      link: "/services/doctor-appointment",
+      icon: "🩺",
     },
   ],
-  about: {
-    story:
-      "One Call Solution was founded in Burdwan to simplify life for our community. From delivering critical medicines to organizing memorable events, we’re committed to making your day easier with local expertise and unmatched speed. Our vision is to be the go-to service platform for every Burdwan resident.",
-    mission:
-      "To provide seamless, reliable, and fast solutions for all your needs in Burdwan, with a focus on customer satisfaction and community support.",
-    team: [
-      {
-        name: "Amit Sharma",
-        role: "Founder",
-        desc: "A Burdwan native passionate about community service.",
-      },
-      {
-        name: "Rina Das",
-        role: "Operations Lead",
-        desc: "Ensuring seamless deliveries across Burdwan.",
-      },
-      {
-        name: "Vikram Sen",
-        role: "Customer Support",
-        desc: "Dedicated to 24/7 customer satisfaction.",
-      },
-    ],
-  },
-  contact: {
-    headline: "Connect with One Call Solution",
-    subheadline: "We’re here 24/7 to assist with your needs in Burdwan.",
-    formFields: [
-      { name: "name", type: "text", placeholder: "Your Name" },
-      { name: "phone", type: "tel", placeholder: "Phone Number" },
-      { name: "email", type: "email", placeholder: "Email Address" },
-      {
-        name: "service",
-        type: "select",
-        placeholder: "Select Service",
-        options: [
-          "Medicine",
-          "Food",
-          "Grocery",
-          "Ride",
-          "Decoration",
-          "House Rent",
-          "Travel",
-          "Doctor Appointment",
-        ],
-      },
-      { name: "message", type: "textarea", placeholder: "Your Message" },
-    ],
-    info: {
-      phone: "+91-1234567890",
-      whatsapp: "+91-1234567890",
-      email: "support@onecallsolution.com",
-      address: "123, Curzon Gate, Burdwan, West Bengal",
-    },
-  },
-  order: {
-    headline: "Place Your Order in Seconds",
-    subheadline: "Order medicine, food, or any service with ease.",
-    formFields: [
-      {
-        name: "service",
-        type: "select",
-        placeholder: "Select Service",
-        options: [
-          "Medicine",
-          "Food",
-          "Grocery",
-          "Ride",
-          "Decoration",
-          "House Rent",
-          "Travel",
-          "Doctor Appointment",
-        ],
-      },
-      {
-        name: "details",
-        type: "textarea",
-        placeholder: "Item/Service Details",
-      },
-      { name: "address", type: "text", placeholder: "Delivery Address" },
-      {
-        name: "payment",
-        type: "select",
-        placeholder: "Payment Method",
-        options: ["Cash on Delivery", "Online Payment"],
-      },
-    ],
-  },
-  blogPosts: [
-    {
-      id: "tips-for-seniors",
-      title: "Tips for Seniors: Simplifying Life in Burdwan",
-      content:
-        "Living in Burdwan as a senior can be made easier with One Call Solution. From medicine delivery to grocery shopping, our services are designed to support seniors with convenience and care. Here are our top tips: 1) Use our hotline for quick orders, 2) Schedule regular deliveries for essentials, 3) Book doctor appointments hassle-free.",
-      date: "June 15, 2025",
-    },
-    {
-      id: "emergency-numbers",
-      title: "Essential Emergency Numbers for Burdwan Residents",
-      content:
-        "Stay prepared with our list of essential emergency numbers in Burdwan: Police (100), Ambulance (108), Fire (101). For non-emergency needs, One Call Solution is your trusted partner for fast deliveries and services. Save our hotline: +91-1234567890.",
-      date: "June 20, 2025",
-    },
-    {
-      id: "burdwan-highlights",
-      title: "Discover Burdwan: Top Highlights and Attractions",
-      content:
-        "Burdwan is rich in culture and history. Visit Curzon Gate, explore Shyamsayar Lake, or enjoy local sweets like Mihidana. Use One Call Solution’s travel services to plan your next trip or book a ride to these iconic spots!",
-      date: "June 25, 2025",
-    },
-  ],
-  faq: [
-    {
-      question: "What services do you offer?",
-      answer:
-        "We provide medicine delivery, food delivery, grocery delivery, ride booking, decoration services, house rentals, travel planning, and doctor appointments in Burdwan.",
-    },
-    {
-      question: "How fast is your delivery?",
-      answer:
-        "Most deliveries are completed within 30–60 minutes, depending on the service and location.",
-    },
-    {
-      question: "How can I track my order?",
-      answer:
-        "Use your order ID on our website to track your order in real-time.",
-    },
-  ],
-  footer: {
-    links: [
-      { name: "Home", path: "/" },
-      { name: "Services", path: "/services" },
-      { name: "About", path: "/about" },
-      { name: "Contact", path: "/contact" },
-      { name: "Book Service", path: "/book-service" },
-      { name: "Privacy Policy", path: "/privacy" },
-    ],
-    contact: {
-      phone: "+91-1234567890",
-      email: "support@onecallsolution.com",
-    },
-    copyright: "© 2025 One Call Solution. All Rights Reserved.",
-  },
 };

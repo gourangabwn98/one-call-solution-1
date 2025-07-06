@@ -1,26 +1,33 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-const ServiceCard = ({ title, desc, icon, index, cta, link }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 50 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ delay: index * 0.2, duration: 0.5 }}
-    whileHover={{ scale: 1.05, boxShadow: "0px 10px 20px rgba(0,0,0,0.1)" }}
-    className="bg-white p-6 rounded-lg shadow-md text-center"
-  >
-    <div className="text-5xl mb-4">{icon}</div>
-    <h3 className="text-xl font-semibold mb-2">{title}</h3>
-    <p className="text-gray-600 mb-4">{desc}</p>
-    {cta && link && (
+const ServiceCard = ({ title, description, icon, link }) => {
+  const cardVariants = {
+    hover: {
+      scale: 1.05,
+      boxShadow: "0 0 20px rgba(251, 191, 36, 0.7)",
+      transition: { duration: 0.3 },
+    },
+  };
+
+  return (
+    <motion.div
+      variants={cardVariants}
+      whileHover="hover"
+      className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/20 shadow-lg text-white text-center"
+    >
+      <div className="text-4xl mb-4">{icon}</div>
+      <h3 className="text-xl sm:text-2xl font-semibold mb-3">{title}</h3>
+      <p className="text-sm sm:text-base text-gray-200 mb-4">{description}</p>
       <Link
         to={link}
-        className="bg-blue-600 text-white px-4 py-2 rounded-full font-semibold"
+        className="inline-block bg-gradient-to-r from-amber-300 to-pink-500 text-white px-6 py-2 rounded-full font-medium hover:bg-gradient-to-r hover:from-pink-500 hover:to-amber-300"
+        aria-label={`Learn more about ${title}`}
       >
-        {cta}
+        Learn More
       </Link>
-    )}
-  </motion.div>
-);
+    </motion.div>
+  );
+};
 
 export default ServiceCard;

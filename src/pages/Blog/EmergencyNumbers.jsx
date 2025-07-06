@@ -1,48 +1,56 @@
 import { motion } from "framer-motion";
-import HeroSection from "../../components/HeroSection";
-import Footer from "../../components/Footer";
-import { siteData } from "../../data";
 
 const EmergencyNumbers = () => {
-  const post = siteData.blogPosts.find((p) => p.id === "emergency-numbers");
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+  };
 
   return (
-    <div>
-      <HeroSection
-        headline={post.title}
-        subheadline="Stay prepared with essential contacts in Burdwan."
-        ctaPrimary="Book Service"
-        ctaSecondary="Contact Us"
-        ctaPrimaryLink="/book-service"
-        ctaSecondaryLink="/contact"
-      />
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <motion.h2
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className="text-3xl md:text-4xl font-bold text-center mb-4"
-          >
-            {post.title}
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className="text-gray-600 text-center mb-8"
-          >
-            {post.date}
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="max-w-2xl mx-auto text-gray-600"
-          >
-            <p>{post.content}</p>
-          </motion.div>
+    <motion.section
+      variants={sectionVariants}
+      initial="hidden"
+      animate="visible"
+      className="min-h-screen bg-[linear-gradient(45deg,#1e1b4b,#be185d)] text-white py-16 pt-24"
+    >
+      <div className="container mx-auto px-6 sm:px-8 md:px-12">
+        <motion.h1
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.3, duration: 0.7 }}
+          className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-amber-300 to-pink-500"
+        >
+          Emergency Numbers
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+          className="text-lg sm:text-xl md:text-2xl text-center mb-12 max-w-3xl mx-auto"
+        >
+          Key contacts for emergencies in Burdwan to keep you safe and prepared.
+        </motion.p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          {[
+            { name: "Police", number: "100" },
+            { name: "Ambulance", number: "108" },
+            { name: "Fire Brigade", number: "101" },
+            { name: "Hospital", number: "+91-123-456-7890" },
+          ].map((contact, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7 + index * 0.2, duration: 0.5 }}
+              className="bg-white/5 backdrop-blur-md rounded-xl p-4 border border-white/20 text-center"
+            >
+              <h3 className="text-lg font-semibold">{contact.name}</h3>
+              <p className="text-sm text-gray-200">{contact.number}</p>
+            </motion.div>
+          ))}
         </div>
-      </section>
-      <Footer />
-    </div>
+      </div>
+    </motion.section>
   );
 };
 
