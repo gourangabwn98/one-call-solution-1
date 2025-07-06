@@ -291,7 +291,7 @@ const TravelTour = () => {
                 <motion.img
                   src={item.image}
                   alt={item.name}
-                  className="w-full h-32 object-cover rounded-lg mb-4"
+                  className="w-full h-40 object-contain rounded-lg mb-4"
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.3 }}
                 />

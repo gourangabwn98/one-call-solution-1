@@ -327,7 +327,7 @@ const MedicineDelivery = () => {
                 <motion.img
                   src={medicine.image}
                   alt={medicine.name}
-                  className="w-full h-32 object-cover rounded-lg mb-4"
+                  className="w-full h-40 object-contain rounded-lg mb-4"
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.3 }}
                 />
@@ -548,3 +548,246 @@ const MedicineDelivery = () => {
 };
 
 export default MedicineDelivery;
+
+// import { motion } from "framer-motion";
+// import { Link, useNavigate } from "react-router-dom";
+// import HeroSection from "../../components/HeroSection";
+// import Footer from "../../components/Footer";
+// import { siteData } from "../../data";
+
+// const MedicineDelivery = () => {
+//   const navigate = useNavigate();
+//   const medicines = siteData.medicines || [
+//     {
+//       id: 1,
+//       name: "Paracetamol 500mg",
+//       price: "₹50",
+//       discount: "10% OFF",
+//       stock: "High",
+//       image: paracetamol,
+//       description: "Relieves mild to moderate pain and fever.",
+//     },
+//     {
+//       id: 2,
+//       name: "Ibuprofen 400mg",
+//       price: "₹80",
+//       discount: "5% OFF",
+//       stock: "Low",
+//       image:
+//         "https://www.ashcroftpharmacy.co.uk/uploads/images/products/large/ashcroft-pharmacy-ibuprofen-400mg-tablets-1740783905Ibuprofen-400mg-Tablets.png",
+//       description: "Anti-inflammatory for pain and swelling.",
+//     },
+//     {
+//       id: 3,
+//       name: "Amoxicillin 250mg",
+//       price: "₹120",
+//       discount: "",
+//       stock: "Medium",
+//       image:
+//         "https://assets.truemeds.in/Images/ProductImage/TM-CACR1-000259/AMOXIL-250-MG-CAPSULE-10_1.webp",
+//       description: "Antibiotic for bacterial infections.",
+//     },
+//     {
+//       id: 4,
+//       name: "Cetirizine 10mg",
+//       price: "₹40",
+//       discount: "15% OFF",
+//       stock: "High",
+//       image:
+//         "https://i0.wp.com/chemist2customer.com/wp-content/uploads/Ceterizine-dihydrochloride.png",
+//       description: "Relieves allergy symptoms.",
+//     },
+//     {
+//       id: 5,
+//       name: "Aspirin 75mg",
+//       price: "₹30",
+//       discount: "",
+//       stock: "Low",
+//       image:
+//         "https://budgetpharmacyfiji.com/wp-content/uploads/2025/05/ASPIRIN-TABS-75MG-28S-MEDREICH-1.png",
+//       description: "For heart health and pain relief.",
+//     },
+//     {
+//       id: 6,
+//       name: "Metformin 500mg",
+//       price: "₹60",
+//       discount: "10% OFF",
+//       stock: "Medium",
+//       image:
+//         "https://www.sanifyhealthcare.com/wp-content/uploads/2020/12/Saiumet-500-Tablets-1.jpg",
+//       description: "Manages type 2 diabetes.",
+//     },
+//   ];
+//   const [searchQuery, setSearchQuery] = useState("");
+//   const filteredMedicines = medicines.filter((medicine) =>
+//     medicine.name.toLowerCase().includes(searchQuery.toLowerCase())
+//   );
+
+//   const handleQuickOrder = (medicine) => {
+//     console.log("Quick order:", medicine);
+//     // Add logic for quick order (e.g., modal or form)
+//   };
+
+//   const handleViewDetails = (medicine) => {
+//     navigate(`/services/medicine-delivery/${medicine.id}`);
+//   };
+
+//   const sectionVariants = {
+//     hidden: { opacity: 0, y: 50 },
+//     visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+//   };
+
+//   const cardVariants = {
+//     hidden: { opacity: 0, y: 50 },
+//     visible: (i) => ({
+//       opacity: 1,
+//       y: 0,
+//       transition: { delay: i * 0.2, duration: 0.5 },
+//     }),
+//     hover: { scale: 1.05, boxShadow: "0 0 20px rgba(251, 191, 36, 0.7)" },
+//   };
+
+//   const currentDate = new Date().toLocaleString("en-IN", {
+//     timeZone: "Asia/Kolkata",
+//     hour12: true,
+//     year: "numeric",
+//     month: "long",
+//     day: "numeric",
+//     hour: "2-digit",
+//     minute: "2-digit",
+//   }); // e.g., "Sunday, July 06, 2025, 04:57 PM IST"
+
+//   return (
+//     <div className="min-h-screen bg-[linear-gradient(45deg,#1e1b4b,#be185d)] text-white">
+//       <HeroSection
+//         headline="Medicine Delivery"
+//         subheadline="Get your medicines delivered to your doorstep quickly and safely."
+//         ctaPrimary="Book Now"
+//         ctaSecondary="Contact Us"
+//         ctaPrimaryLink="/book-service"
+//         ctaSecondaryLink="/contact"
+//       />
+//       <section className="py-16">
+//         <div className="container mx-auto px-4 lg:px-8">
+//           <motion.div
+//             initial={{ opacity: 0, y: 20 }}
+//             animate={{ opacity: 1, y: 0 }}
+//             transition={{ delay: 0.5, duration: 0.6 }}
+//             className="mb-12 max-w-lg mx-auto relative"
+//           >
+//             <label
+//               className="block text-sm text-gray-200 mb-2"
+//               htmlFor="search"
+//             >
+//               Search Medicines
+//             </label>
+//             <div className="relative">
+//               <input
+//                 type="text"
+//                 id="search"
+//                 value={searchQuery}
+//                 onChange={(e) => setSearchQuery(e.target.value)}
+//                 className="w-full px-4 py-2 pl-10 bg-white/10 border border-gray-300 rounded-lg text-white focus:outline-none"
+//                 placeholder="Search for medicines..."
+//               />
+//               <svg
+//                 className="absolute left-3 top-2.5 h-5 w-5 text-gray-200"
+//                 fill="none"
+//                 stroke="currentColor"
+//                 viewBox="0 0 24 24"
+//               >
+//                 <path
+//                   strokeLinecap="round"
+//                   strokeLinejoin="round"
+//                   strokeWidth="2"
+//                   d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+//                 />
+//               </svg>
+//             </div>
+//           </motion.div>
+//           <motion.div
+//             initial={{ opacity: 0, y: 20 }}
+//             animate={{ opacity: 1, y: 0 }}
+//             transition={{ delay: 1.1, duration: 0.6 }}
+//             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"
+//           >
+//             {filteredMedicines.length > 0 ? (
+//               filteredMedicines.map((medicine, index) => (
+//                 <motion.div
+//                   key={medicine.id}
+//                   variants={cardVariants}
+//                   custom={index}
+//                   initial="hidden"
+//                   animate="visible"
+//                   whileHover="hover"
+//                   className="bg-white/5 backdrop-blur-md rounded-xl p-4 border border-white/20 text-center relative"
+//                 >
+//                   {medicine.discount && (
+//                     <div className="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+//                       {medicine.discount}
+//                     </div>
+//                   )}
+//                   <motion.img
+//                     src={medicine.image}
+//                     alt={medicine.name}
+//                     className="w-full h-40 object-contain rounded-lg mb-4"
+//                     whileHover={{ scale: 1.1 }}
+//                     transition={{ duration: 0.3 }}
+//                   />
+//                   <h3 className="text-xl font-semibold mb-2">
+//                     {medicine.name}
+//                   </h3>
+//                   <p className="text-gray-200 mb-2">{medicine.price}</p>
+//                   <p className="text-sm text-gray-400 mb-4">
+//                     Stock: {medicine.stock}
+//                   </p>
+//                   <div className="flex gap-2 justify-center">
+//                     <motion.button
+//                       whileHover={{
+//                         scale: 1.05,
+//                         boxShadow: "0 0 15px rgba(251, 191, 36, 0.7)",
+//                       }}
+//                       whileTap={{ scale: 0.95 }}
+//                       onClick={() => handleQuickOrder(medicine)}
+//                       className="bg-gradient-to-r from-amber-300 to-pink-500 text-white px-4 py-2 rounded-full font-semibold"
+//                       aria-label={`Quick order ${medicine.name}`}
+//                     >
+//                       Quick Order
+//                     </motion.button>
+//                     <motion.button
+//                       whileHover={{
+//                         scale: 1.05,
+//                         boxShadow: "0 0 15px rgba(251, 191, 36, 0.7)",
+//                       }}
+//                       whileTap={{ scale: 0.95 }}
+//                       onClick={() => handleViewDetails(medicine)}
+//                       className="bg-transparent border border-amber-300 text-amber-300 px-4 py-2 rounded-full font-semibold"
+//                       aria-label={`View details for ${medicine.name}`}
+//                     >
+//                       View Details
+//                     </motion.button>
+//                   </div>
+//                 </motion.div>
+//               ))
+//             ) : (
+//               <p className="text-center col-span-full text-gray-200">
+//                 No medicines found.
+//               </p>
+//             )}
+//           </motion.div>
+//           <motion.p
+//             initial={{ opacity: 0 }}
+//             animate={{ opacity: 1 }}
+//             transition={{ delay: 1.5, duration: 0.5 }}
+//             className="text-center text-gray-400"
+//           >
+//             Last updated: {currentDate}
+//           </motion.p>
+//         </div>
+//       </section>
+//       <Footer />
+//     </div>
+//   );
+// };
+
+// export default MedicineDelivery;
