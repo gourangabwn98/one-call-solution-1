@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { siteData } from "../../data";
 import paracetamol from "../../assets/Images/Paracetamol-500-mg-Tablet_1.webp";
+import { toast } from "react-toastify";
 
 const MedicineDelivery = () => {
   const { serviceId } = useParams();
@@ -125,8 +126,30 @@ const MedicineDelivery = () => {
       setFormData({ ...formData, date: "", details: "" });
       setErrors({});
       setShowModal(false);
+      toast.success("Booking confirmed successfully!", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progressStyle: {
+          background: "linear-gradient(to right, #fbbf24, #ec4899)",
+        },
+      });
     } else {
       setErrors(newErrors);
+      toast.error("Please fix the errors in the form.", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progressStyle: {
+          background: "linear-gradient(to right, #fbbf24, #ec4899)",
+        },
+      });
     }
   };
 

@@ -88,8 +88,30 @@ const TravelTour = () => {
       setErrors({});
       setShowModal(false);
       setDiscountCode("");
+      toast.success("Booking confirmed successfully!", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progressStyle: {
+          background: "linear-gradient(to right, #fbbf24, #ec4899)",
+        },
+      });
     } else {
       setErrors(newErrors);
+      toast.error("Please select data in the form.", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progressStyle: {
+          background: "linear-gradient(to right, #fbbf24, #ec4899)",
+        },
+      });
     }
   };
 

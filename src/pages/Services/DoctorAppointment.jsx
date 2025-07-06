@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useParams, useNavigate, useLocation } from "react-router-dom";
 import { siteData } from "../../data";
+import { toast } from "react-toastify";
 
 const DoctorAppointment = () => {
   const { serviceId } = useParams();
@@ -91,8 +92,31 @@ const DoctorAppointment = () => {
       setShowModal(false);
       setPoints(0);
       setBookingPrice("");
+      toast.success("Booking confirmed successfully!", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progressStyle: {
+          background: "linear-gradient(to right, #fbbf24, #ec4899)",
+        },
+      });
     } else {
       setErrors(newErrors);
+
+      toast.error("Please select data in the form.", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progressStyle: {
+          background: "linear-gradient(to right, #fbbf24, #ec4899)",
+        },
+      });
     }
   };
 
